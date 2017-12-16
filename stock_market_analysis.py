@@ -25,8 +25,6 @@ tesla = quandl.get("WIKI/TSLA", start_date=start, end_date=end)
 ford = quandl.get("WIKI/F", start_date=start, end_date=end)
 gm = quandl.get("WIKI/GM", start_date=start, end_date=end)
 
-
-
 # Linear plot of all the stock's Open price
 
 tesla["Open"].plot(label="Tesla", figsize=(12,8), title='Opening Prices')
@@ -111,7 +109,6 @@ gm['returns'].plot(kind='kde',label='GM',figsize=(10,8))
 ford['returns'].plot(kind='kde',label='Ford',figsize=(10,8))
 plt.legend()
 
-# Creating box plots comparing the returns.
 # Creating box plots comparing the returns.
 
 box_df = pd.concat([tesla['returns'],ford['returns'],gm['returns']], axis=1)
